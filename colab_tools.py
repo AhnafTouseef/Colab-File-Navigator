@@ -1,6 +1,27 @@
 from pathlib import Path
 import shutil
 
+def help():
+    dictionary = {
+        "new_folder(path)": "Create a new folder.",
+        "new_file(path)": "Create a new file.",
+        "copy(source, destination)": "Copy file or folder.",
+        "move(source, destination)": "Move file or folder.",
+        "move_from(source, destination)": "Move contents from one folder to another.",
+        "copy_from(source, destination)": "Copy contents from one folder to another.",
+        "rename(path, new_name)": "Rename a file or folder.",
+        "delete(path)": "Delete file or folder.",
+        "delete_content(path)": "Delete contents of a folder.",
+        "exists(path)": "Check if a path exists.",
+        "open_folder(path)": "Return contents of folder.",
+        "search(location, keyword)": "Search files and folders.",
+        "find(location, extension)": "Find files by extension.",
+        "folder_size(path)": "Get size of folder.",
+        "properties(path)": "Get properties of file or folder."
+    }
+    df = pd.DataFrame.from_dict(dictionary, orient='index', columns=['Description'])
+    return df.style.set_properties(**{'text-align': 'left'})\
+             .set_table_styles([dict(selector='th', props=[('text-align', 'left')])])
 
 # -----------------------------
 # Create
@@ -247,3 +268,5 @@ try:
   delete('/content/sample_data')
 except:
   pass
+
+print('''Type "help()" for help''')
