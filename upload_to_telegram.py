@@ -1,7 +1,7 @@
-# 1. Install required packages
-!pip install telethon hachoir nest_asyncio
-
 import requests
+import subprocess
+
+subprocess.run(["pip", "install", "telethon", "hachoir," "nest_asyncio"])
 
 # Fetch the raw text of whatever script you need
 script_url = "https://raw.githubusercontent.com/AhnafTouseef/Colab-Tools/main/colab_file_naviagator.py"
