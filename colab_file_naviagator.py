@@ -1,5 +1,6 @@
 from pathlib import Path
 import shutil
+import pandas as pd
 
 def help():
     dictionary = {
@@ -166,7 +167,6 @@ def open_folder(path):
     """
     Return contents of folder.
     """
-    import pandas as pd
     File = []
     Address = []
     df = pd.DataFrame(columns=["Address", "Files"])
